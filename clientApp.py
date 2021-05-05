@@ -3,7 +3,7 @@ import os
 from flask_cors import CORS, cross_origin
 
 import speechToText
-from com_in_ineuron_ai_utils.utils import decodeSound
+from utils.utils import decodeSound
 os.putenv('LANG', 'en_US.UTF-8')
 os.putenv('LC_ALL', 'en_US.UTF-8')
 
@@ -25,7 +25,7 @@ def predictRoute():
     return jsonify({"Result" : str(result)})
 
 
-port = int(os.getenv("PORT"))
+#port = int(os.getenv("PORT"))
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=port)
-    # app.run(host='0.0.0.0', port=5000, debug=True)
+    #app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=5000, debug=True)
